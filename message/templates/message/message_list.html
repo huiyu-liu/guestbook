@@ -1,16 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>留言板</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block content %}
     <h1>留言列表</h1>
     <ul> 
         {% for msg in message_list %}
-        <li>{{ msg.created }} {{ msg.suject }}</li> <!-- LIst Item -->
+        <li>
+            {{ msg.created }} 
+        <a href="{% url 'msg_read' msg.id %}">{{ msg.suject }}</a>
+        </li> 
         {% endfor %}
     </ul>
-</body>
-</html>
+{% endblock %}
+
