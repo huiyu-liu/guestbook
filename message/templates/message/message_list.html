@@ -6,7 +6,8 @@
         {% for msg in message_list %}
         <li>
             {{ msg.created }} 
-        <a href="{% url 'msg_read' msg.id %}">{{ msg.suject }}</a>
+            <a href="{% url 'msg_read' msg.id %}">{{ msg.subject }}</a>
+            <a href="{% url 'msg_delete' msg.id %}">刪除</a>
         </li> 
         {% endfor %}
     </ul>

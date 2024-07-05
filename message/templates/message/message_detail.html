@@ -9,5 +9,5 @@
     <h2>留言時間</h2>
     <p>{{ message.created }}</p>
     <h2>留言內容</h2>
-    <div>{{ message.content }}</div>
+    <div>{{ message.content|linebreaks }}</div>
 {% endblock %}

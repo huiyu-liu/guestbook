@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>刪除留言</h1>
+<form action="" methon="post">
+    {% csrf_token %}
+    <input type="submit" value="是的，我要刪除">
+</form>
+{% endblock %}

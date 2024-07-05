@@ -123,4 +123,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = '/message/'
+LOGIN_REDIRECT_URL = 'msg_list'
+
+
+LOGOUT_REDIRECT_URL = 'msg_list'
