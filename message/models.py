@@ -7,3 +7,6 @@ class Message(models.Model):
     subject = models.CharField('留言主題', max_length=128)
     content = models.TextField('留言內容')
     created = models.DateTimeField('留言時間', auto_now_add=True)
+
+    def __str__(self):
+        return self.subject

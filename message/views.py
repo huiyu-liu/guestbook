@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView, DeleteView
 from .models import Message
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
 class MessageList(ListView):
@@ -26,7 +27,7 @@ class MessageNew(CreateView):
     # 頁面範本檔案名稱: 應用程式/資料模型_form.html => message/message_form.html
     # 頁面範本變數名稱: form
 
-class MessageDelete(DeleteView):
+class MessageDelete(LoginRequiredMixin, DeleteView):
     model = Message
     success_url = reverse_lazy('msg_list')
 
